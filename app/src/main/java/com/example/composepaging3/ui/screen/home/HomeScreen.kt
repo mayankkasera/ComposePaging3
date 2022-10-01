@@ -23,7 +23,7 @@ fun HomeScreen(
         topBar = {
             HomeTopBar(
                 onSearchClicked = {
-                    navController.navigate(Screen.Search.route)
+
                 }
             )
         },

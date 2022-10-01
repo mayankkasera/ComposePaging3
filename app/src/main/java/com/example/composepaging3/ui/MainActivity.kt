@@ -10,20 +10,22 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import androidx.paging.ExperimentalPagingApi
+import com.example.composepaging3.navigation.SetupNavGraph
 import com.example.composepaging3.ui.theme.ComposePaging3Theme
+import dagger.hilt.android.AndroidEntryPoint
 
+@ExperimentalPagingApi
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             ComposePaging3Theme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
+                val navController = rememberNavController()
+                SetupNavGraph(navController = navController)
             }
         }
     }
