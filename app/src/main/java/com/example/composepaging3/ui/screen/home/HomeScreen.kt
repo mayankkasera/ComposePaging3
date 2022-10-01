@@ -14,7 +14,6 @@ import com.example.composepaging3.ui.screen.common.ListContent
 @ExperimentalPagingApi
 @Composable
 fun HomeScreen(
-    navController: NavHostController,
     homeViewModel: HomeViewModel = hiltViewModel()
 ) {
     val getAllImages = homeViewModel.getAllImages.collectAsLazyPagingItems()
